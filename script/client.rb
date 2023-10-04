@@ -1,7 +1,7 @@
 require_relative '../app/lib/hello_services_pb'
 
 class HelloClient
-  def initialize(host: 'localhost', port: '50051')
+  def initialize(host: '0.0.0.0', port: '50051')
     @stub = Hello::Greeter::Stub.new("#{host}:#{port}", :this_channel_is_insecure)
   end
 
@@ -19,6 +19,6 @@ class HelloClient
   end
 end
 
-client = HelloClient.new
+client = HelloClient.new(host: ENV['HOST'], port: ENV['PORT'])
 puts client.say_hello('World')
 puts client.get_hello
