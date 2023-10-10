@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package mypackage.enquete;
+
+import "google/protobuf/timestamp.proto";
+
+service EnqueteService {
+  rpc ListEnquete (ListEnqueteRequest) returns (ListEnqueteResponse);
+  rpc GetEnquete (GetEnqueteRequest) returns (GetEnqueteResponse);
+}
+
+message Enquete {
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    STATUS_DRAFT = 1;
+    STATUS_PUBLISHED = 2;
+    STATUS_CLOSED = 3;
+  }
+
+  int64 id = 1;
+  string title = 2;
+  string description = 3;
+  Status status = 4;
+  google.protobuf.Timestamp start_at = 5;
+  google.protobuf.Timestamp end_at = 6;
+  google.protobuf.Timestamp created_at = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message ListEnqueteRequest {
+  message Filter {
+  }
+
+  Filter filter = 1;
+  int64 offset = 2;
+  int64 limit = 3;
+}
+
+message ListEnqueteResponse {
+  repeated Enquete enquetes = 1;
+}
+
+message GetEnqueteRequest {
+  int64 enquete_id = 1;
+}
+
+message GetEnqueteResponse {
+  Enquete enquete = 1;
+}
+

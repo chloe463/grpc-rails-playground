@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+(1..10).each do |id|
+  Enquete.create({
+    title: "Enquete.#{id}",
+    description: 'This is a survey for...',
+    status: [:published, :draft][id % 2],
+    start_at: Date.new(2023, 10, 1),
+    end_at: Date.new(2023, 11, 1)
+  })
+end

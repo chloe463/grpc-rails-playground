@@ -1,5 +1,5 @@
 # be rails runner script/generate.rb
-system('grpc_tools_ruby_protoc -I app/protos --ruby_out=app/lib --grpc_out=app/lib app/protos/hello.proto')
+system('grpc_tools_ruby_protoc -I app/protos --ruby_out=app/lib --grpc_out=app/lib app/protos/enquete.proto')
 
 # cf. https://github.com/grpc/grpc/issues/6164#issuecomment-1003781054
 Dir['app/lib/*_pb.rb'].each do |file|
