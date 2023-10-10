@@ -82,6 +82,7 @@ GEM
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    gmsc (0.0.1)
     google-protobuf (3.24.3-arm64-darwin)
     googleapis-common-protos-types (1.9.0)
       google-protobuf (~> 3.18)
@@ -179,6 +180,7 @@ DEPENDENCIES
   bootsnap
   debug
   dotenv-rails
+  gmsc
   grpc
   grpc-tools
   puma (~> 5.0)
