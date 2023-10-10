@@ -69,6 +69,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    computed_model (0.3.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -121,6 +122,10 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
+    pb-serializer (0.5.2)
+      computed_model (~> 0.3.0)
+      google-protobuf (~> 3.0)
+      the_pb (~> 0.0.1)
     psych (5.1.0)
       stringio
     puma (5.6.7)
@@ -164,6 +169,8 @@ GEM
       io-console (~> 0.5)
     sqlite3 (1.6.6-arm64-darwin)
     stringio (3.0.8)
+    the_pb (0.0.2)
+      google-protobuf (~> 3.0)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -184,9 +191,11 @@ DEPENDENCIES
   google-protobuf
   grpc
   grpc-tools
+  pb-serializer
   puma (~> 5.0)
   rails (~> 7.0.8)
   sqlite3 (~> 1.4)
+  the_pb
   tzinfo-data
 
 RUBY VERSION
