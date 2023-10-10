@@ -181,6 +181,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   gmsc
+  google-protobuf
   grpc
   grpc-tools
   puma (~> 5.0)
