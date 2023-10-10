@@ -13,7 +13,7 @@ end
 
 class MyInterceptor < GRPC::ServerInterceptor
   def request_response(request: nil, call: nil, method: nil, metadata: nil)
-    GRPC.logger.debug("#{method.owner}\##{method.name} is called with request #{request.to_h}")
+    GRPC.logger.debug("#{method.owner}\##{method.name} is called with request #{request.to_h}, metadata: #{GMSC.safe_convert(call.metadata).to_json}")
     yield
   end
 end

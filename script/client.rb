@@ -7,13 +7,12 @@ class HelloClient
 
   def say_hello(name)
     request = Hello::HelloRequest.new(name: name)
-    response = @stub.say_hello(request)
+    response = @stub.say_hello(request, metadata: { :key => "123" })
     response.message
   end
 
   def get_hello
     request = Hello::GetHelloRequest.new(n: 123)
-    # binding.irb
     response = @stub.get_hello(request)
     response.message
   end
