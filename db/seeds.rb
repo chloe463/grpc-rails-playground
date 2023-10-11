@@ -1,5 +1,5 @@
 (1..10).each do |id|
-  Enquete.create({
+  enquete = Enquete.create({
     title: "Enquete.#{id}",
     description: 'This is a survey for...',
     status: %i[published draft][id % 2],
@@ -7,11 +7,18 @@
     end_at: Date.new(2023, 11, 1)
    })
   (1..5).each do |qid|
-    Question.create({
-      enquete_id: id,
-      text: "Question.#{id}-#{qid}",
+    question = Question.create({
+      enquete_id: enquete.id,
+      text: "Question.#{enquete.id}-#{qid}",
       format: rand(1..4),
       required: false,
     })
+
+    (1..4).each do |oid|
+      Option.create({
+        question_id: question.id,
+        text: "Option.#{enquete.id}-#{question.id}-#{oid}",
+      })
+    end
   end
 end

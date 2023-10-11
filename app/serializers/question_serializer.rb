@@ -9,6 +9,8 @@ class QuestionSerializer < Pb::Serializer::Base
   attribute :created_at
   attribute :updated_at
 
+  attribute :options, serializer: OptionSerializer
+
   def format
     "FORMAT_#{object.format.upcase}".to_sym
   end
