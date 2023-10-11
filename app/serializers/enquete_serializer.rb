@@ -12,6 +12,7 @@ class EnqueteSerializer < Pb::Serializer::Base
 
   def status
     "STATUS_#{object.status.upcase}".to_sym
+    # object.status_before_type_cast
   end
 
   def start_at
