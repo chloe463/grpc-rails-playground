@@ -4,6 +4,7 @@ require_relative '../lib/enquete_services_pb'
 class EnqueteService < Mypackage::Enquete::EnqueteService::Service
   def list_enquete(req, _unused_call)
     raw_enquetes = Enquete
+                   .includes(:questions)
                    .offset(req.offset)
                    .limit(req.limit)
     enquetes = raw_enquetes.map do |e|

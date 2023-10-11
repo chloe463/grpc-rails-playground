@@ -10,6 +10,8 @@ class EnqueteSerializer < Pb::Serializer::Base
   attribute :created_at
   attribute :updated_at
 
+  attribute :questions, serializer: QuestionSerializer
+
   def status
     "STATUS_#{object.status.upcase}".to_sym
     # object.status_before_type_cast
