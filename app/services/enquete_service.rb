@@ -14,7 +14,7 @@ class EnqueteService < Mypackage::Enquete::EnqueteService::Service
   end
 
   def get_enquete(req, _call)
-    raw_enquete = Enquete.find(req.enquete_id)
+    raw_enquete = Enquete.includes(:questions, :options).find(req.enquete_id)
     Mypackage::Enquete::GetEnqueteResponse.new(enquete: EnqueteSerializer.new(raw_enquete).to_pb)
   end
 end
