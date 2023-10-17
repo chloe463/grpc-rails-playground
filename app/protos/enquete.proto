@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package mypackage.enquete;
+
+import "google/protobuf/timestamp.proto";
+
+service EnqueteService {
+  rpc ListEnquete (ListEnqueteRequest) returns (ListEnqueteResponse);
+  rpc GetEnquete (GetEnqueteRequest) returns (GetEnqueteResponse);
+}
+
+message Enquete {
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    STATUS_DRAFT = 1;
+    STATUS_PUBLISHED = 2;
+    STATUS_CLOSED = 3;
+  }
+
+  int64 id = 1;
+  string title = 2;
+  string description = 3;
+  Status status = 4;
+  google.protobuf.Timestamp start_at = 5;
+  google.protobuf.Timestamp end_at = 6;
+  google.protobuf.Timestamp created_at = 7;
+  google.protobuf.Timestamp updated_at = 8;
+
+  repeated Question questions = 9;
+}
+
+message Question {
+  enum Format {
+    FORMAT_UNSPECIFIED = 0;
+    FORMAT_RADIO = 1;
+    FORMAT_CHECKBOX = 2;
+    FORMAT_DROPDOWN = 3;
+    FORMAT_FREE_TEXT = 4;
+  }
+  int64 id = 1;
+  int64 enquete_id = 2;
+  string text = 3;
+  Format format = 4;
+  bool required = 5;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
+
+  repeated Option options = 8;
+}
+
+message Option {
+  int64 id = 1;
+  int64 question_id = 2;
+  string text = 3;
+  google.protobuf.Timestamp created_at = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}
+
+message ListEnqueteRequest {
+  message Filter {
+  }
+
+  Filter filter = 1;
+  int64 offset = 2;
+  int64 limit = 3;
+}
+
+message ListEnqueteResponse {
+  repeated Enquete enquetes = 1;
+}
+
+message GetEnqueteRequest {
+  int64 enquete_id = 1;
+}
+
+message GetEnqueteResponse {
+  Enquete enquete = 1;
+}
+

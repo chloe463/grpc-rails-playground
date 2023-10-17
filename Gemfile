@@ -40,6 +40,10 @@ gem 'dotenv-rails'
 gem 'grpc'
 gem 'grpc-tools'
 gem 'gmsc'
+gem 'google-protobuf'
+
+gem 'the_pb'
+gem 'pb-serializer'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
