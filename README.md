@@ -1,24 +1,16 @@
-# README
+# gRPC server playground
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to start server
 
-Things you may want to cover:
+Run following command to run the server.
 
-* Ruby version
+```
+bundle exec rails runner script/grpc-server.rb
+```
 
-* System dependencies
+## Re-generate files from .proto file
 
-* Configuration
+```
+bundle exec rails runner script/generate.rb
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
