@@ -1,3 +1,5 @@
+require_relative '../../lib/enquete_pb'
+
 class EnqueteSerializer < Pb::Serializer::Base
   message Mypackage::Enquete::Enquete
 
