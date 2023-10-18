@@ -1,5 +1,5 @@
 require 'google/protobuf/timestamp_pb'
-require_relative '../lib/enquete_services_pb'
+require_relative '../../lib/enquete_services_pb'
 
 class EnqueteService < Mypackage::Enquete::EnqueteService::Service
   def list_enquete(req, _unused_call)

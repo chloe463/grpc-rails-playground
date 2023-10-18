@@ -1,5 +1,4 @@
-require_relative '../app/lib/hello_services_pb'
-require_relative '../app/lib/enquete_services_pb'
+require_relative '../lib/enquete_services_pb'
 
 # class HelloClient
 #   def initialize(host: '0.0.0.0', port: '50051')
