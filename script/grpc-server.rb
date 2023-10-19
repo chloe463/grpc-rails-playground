@@ -18,8 +18,8 @@ class MyInterceptor < GRPC::ServerInterceptor
   end
 end
 
-host = ENV['HOST']
-port = ENV['PORT']
+host = ENV['HOST'] || '0.0.0.0'
+port = ENV['PORT'] || '50051'
 uri = "#{host}:#{port}"
 
 server = GRPC::RpcServer.new(interceptors: [MyInterceptor.new])
