@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package mypackage.user;
+
+service UserService {
+  rpc ListUser (ListUserRequest) returns (ListUserResponse);
+  rpc GetUser (GetUserRequest) returns (GetUserResponse);
+}
+
+message User {
+  int64 id = 1;
+  string name = 2;
+}
+
+message ListUserRequest {
+  repeated int64 user_ids = 1;
+}
+
+message ListUserResponse {
+  repeated User users = 1;
+}
+
+message GetUserRequest {
+  int64 id = 1;
+}
+
+message GetUserResponse {
+  User user = 1;
+}

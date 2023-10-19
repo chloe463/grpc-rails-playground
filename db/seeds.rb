@@ -22,3 +22,21 @@
     end
   end
 end
+
+[
+  'Luke Skywalker',
+  'Darth Vader',
+  'Leia Organa',
+  'Han Solo',
+  'Obi Wan Kenobi',
+  'Chewbacca',
+  'Yoda',
+  'R2D2',
+  'C3PO',
+  'Boba Fett',
+].freeze.each do |name|
+    User.create({
+      name:
+    })
+  end
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_11_155303) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_19_153831) do
   create_table "enquetes", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -33,6 +33,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_11_155303) do
     t.string "text", null: false
     t.integer "format", null: false
     t.boolean "required", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

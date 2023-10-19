@@ -19,11 +19,11 @@ class MyInterceptor < GRPC::ServerInterceptor
 end
 
 host = ENV['HOST'] || '0.0.0.0'
-port = ENV['ENQUETE_SERVICE_PORT'] || '50051'
+port = ENV['USER_SERVICE_PORT'] || '50052'
 uri = "#{host}:#{port}"
 
 server = GRPC::RpcServer.new(interceptors: [MyInterceptor.new])
 server.add_http2_port(uri, :this_port_is_insecure)
 GRPC.logger.debug("Server is running on #{uri}")
-server.handle(EnqueteService)
+server.handle(UserService)
 server.run_till_terminated
