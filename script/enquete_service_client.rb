@@ -18,7 +18,7 @@ class EnqueteClient
   end
 end
 
-client = EnqueteClient.new(host: ENV['HOST'], port: ENV['PORT'])
+client = EnqueteClient.new
 client.list_enquete.each do |e|
   puts e.to_json
 end
