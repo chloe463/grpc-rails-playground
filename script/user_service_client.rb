@@ -8,13 +8,13 @@ class UserServiceClient
   def list_user
     request = Mypackage::User::ListUserRequest.new(user_ids: [])
     response = @stub.list_user(request)
-    response.users
+    response.items
   end
 
   def get_user
     request = Mypackage::User::GetUserRequest.new(id: 1)
     response = @stub.get_user(request)
-    response.user
+    response
   end
 end
 

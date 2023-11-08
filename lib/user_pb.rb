@@ -5,7 +5,7 @@
 require 'google/protobuf'
 
 
-descriptor_data = "\n\nuser.proto\x12\x0emypackage.user\" \n\x04User\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"#\n\x0fListUserRequest\x12\x10\n\x08user_ids\x18\x01 \x03(\x03\"7\n\x10ListUserResponse\x12#\n\x05users\x18\x01 \x03(\x0b\x32\x14.mypackage.user.User\"\x1c\n\x0eGetUserRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"5\n\x0fGetUserResponse\x12\"\n\x04user\x18\x01 \x01(\x0b\x32\x14.mypackage.user.User2\xa8\x01\n\x0bUserService\x12M\n\x08ListUser\x12\x1f.mypackage.user.ListUserRequest\x1a .mypackage.user.ListUserResponse\x12J\n\x07GetUser\x12\x1e.mypackage.user.GetUserRequest\x1a\x1f.mypackage.user.GetUserResponseb\x06proto3"
+descriptor_data = "\n\nuser.proto\x12\x0emypackage.user\" \n\x04User\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\"#\n\x0fListUserRequest\x12\x10\n\x08user_ids\x18\x01 \x03(\x05\"7\n\x10ListUserResponse\x12#\n\x05items\x18\x01 \x03(\x0b\x32\x14.mypackage.user.User\"\x1c\n\x0eGetUserRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"5\n\x0fGetUserResponse\x12\"\n\x04user\x18\x01 \x01(\x0b\x32\x14.mypackage.user.User2\x9d\x01\n\x0bUserService\x12M\n\x08ListUser\x12\x1f.mypackage.user.ListUserRequest\x1a .mypackage.user.ListUserResponse\x12?\n\x07GetUser\x12\x1e.mypackage.user.GetUserRequest\x1a\x14.mypackage.user.Userb\x06proto3"
 
 pool = Google::Protobuf::DescriptorPool.generated_pool
 

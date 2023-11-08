@@ -16,7 +16,8 @@ module Mypackage
         self.service_name = 'mypackage.user.UserService'
 
         rpc :ListUser, ::Mypackage::User::ListUserRequest, ::Mypackage::User::ListUserResponse
-        rpc :GetUser, ::Mypackage::User::GetUserRequest, ::Mypackage::User::GetUserResponse
+        # rpc GetUser (GetUserRequest) returns (GetUserResponse);
+        rpc :GetUser, ::Mypackage::User::GetUserRequest, ::Mypackage::User::User
       end
 
       Stub = Service.rpc_stub_class
