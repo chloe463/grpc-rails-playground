@@ -4,24 +4,25 @@ package mypackage.user;
 
 service UserService {
   rpc ListUser (ListUserRequest) returns (ListUserResponse);
-  rpc GetUser (GetUserRequest) returns (GetUserResponse);
+  // rpc GetUser (GetUserRequest) returns (GetUserResponse);
+  rpc GetUser (GetUserRequest) returns (User);
 }
 
 message User {
-  int64 id = 1;
+  int32 id = 1;
   string name = 2;
 }
 
 message ListUserRequest {
-  repeated int64 user_ids = 1;
+  repeated int32 user_ids = 1;
 }
 
 message ListUserResponse {
-  repeated User users = 1;
+  repeated User items = 1;
 }
 
 message GetUserRequest {
-  int64 id = 1;
+  int32 id = 1;
 }
 
 message GetUserResponse {
