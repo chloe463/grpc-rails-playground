@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_19_153831) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_25_155845) do
   create_table "enquetes", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_19_153831) do
     t.datetime "end_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "author_id"
   end
 
   create_table "options", force: :cascade do |t|

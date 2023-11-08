@@ -11,6 +11,7 @@ class EnqueteSerializer < Pb::Serializer::Base
   attribute :end_at
   attribute :created_at
   attribute :updated_at
+  attribute :author_id
 
   attribute :questions, serializer: QuestionSerializer
 

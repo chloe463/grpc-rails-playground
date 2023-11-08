@@ -27,6 +27,8 @@ message Enquete {
   google.protobuf.Timestamp updated_at = 8;
 
   repeated Question questions = 9;
+
+  int32 author_id = 10;
 }
 
 message Question {
