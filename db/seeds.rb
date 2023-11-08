@@ -4,7 +4,8 @@
     description: 'This is a survey for...',
     status: %i[published draft][id % 2],
     start_at: Date.new(2023, 10, 1),
-    end_at: Date.new(2023, 11, 1)
+    end_at: Date.new(2023, 11, 1),
+    author_id: id,
    })
   (1..5).each do |qid|
     question = Question.create({
@@ -22,3 +23,21 @@
     end
   end
 end
+
+[
+  'Luke Skywalker',
+  'Darth Vader',
+  'Leia Organa',
+  'Han Solo',
+  'Obi Wan Kenobi',
+  'Chewbacca',
+  'Yoda',
+  'R2D2',
+  'C3PO',
+  'Boba Fett',
+].freeze.each do |name|
+    User.create({
+      name:
+    })
+  end
+
